@@ -1,0 +1,53 @@
+{% extends 'layouts/main.html' %} {% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2"><a class="navbar-brand" href="{{url_for('home')}}">Chat Analyzer & Parser</a></h1>
+  <!-- <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+    </div>
+    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+      This week
+    </button>
+  </div> -->
+</div>
+
+  <div class="col-12 col-xl-12 pt-4">
+    <div class="card card-body border-0 shadow mb-4">
+      <h5 class="h6 mb-4">Upload Html File And Parse Chat Information</h5>
+      <form action="/process_html" method="post" id="process_html_form" enctype="multipart/form-data" >
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div>
+              <label for="file_chooser">Choose Html File</label>
+              <input name="html_file" class="form-control" accept=".html"  type="file" id="html_file" required>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="output_format">Ouptut Format</label>
+            <select
+              class="form-select mb-0"
+              id="output_format"
+              aria-label="Ouptut Format Select"
+            >
+              <!-- <option selected="selected">Gender</option> -->
+              <option value="GML">GML</option>
+              <option value="GraphML">GraphML</option>
+            </select>
+          </div>
+
+        </div>
+        
+        <div class="d-grid gap-2 mt-3">
+          <button class="btn btn-lg btn-primary" type="submit">
+            Start Processing
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

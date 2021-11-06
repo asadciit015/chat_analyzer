@@ -1,0 +1,7 @@
+__pycache__/**
+cp.code-workspace
+*.logs
+*.log
+json_files/**
+Pipfile
+Pipfile.lock

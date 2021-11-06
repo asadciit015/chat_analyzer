@@ -1,0 +1,4 @@
+### Put your own dependencies here.
+beautifulsoup4==4.6.0
+requests==2.21.0
+flask==2.0.2
